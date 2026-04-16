@@ -69,6 +69,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           ),
         ],
       ),
+
       body: Center(
         child: FutureBuilder<Weather>(
           future: _weatherFuture,
@@ -81,6 +82,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
             else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             }
+
             // State 3: Data successfully fetched
             else if (snapshot.hasData) {
               final weather = snapshot.data!;
